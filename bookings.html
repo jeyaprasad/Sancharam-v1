@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* Basic Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+    font-family: 'Montserrat';
+    line-height: 1.7;
+    }
+
+    /* Nav */
+    nav {
+      background-color: black;
+      height: 80px; /* Adjusted height to match the image */
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between; /* Aligns logo left, nav items right */
+      align-items: center;
+    }
+    nav img {
+      height: 70px; /* Adjusted height to match the logo in the image */
+      width: 300px; /* Adjusted width to match the logo in the image */
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      color: #ff5c70; /* Added hover effect for consistency */
+    }
+
+
+    /* Heading */
+    .subheading {
+      text-align: left;
+      font-size: 32px;
+      font-weight: 600;
+      margin: 30px 60px 10px;
+    }
+    .underline {
+      height: 5px;
+      width: 90%;
+      background-color: #ee4b5c;
+      margin: 0 auto 20px;
+    }
+
+    /* Booking Form */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    h2 {
+      color: #ee0979;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    input, select {
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 25px;
+      padding: 14px;
+      background: #ee4758;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ee4758;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #263238;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      color: white;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 30px;
+    }
+    .social-icons i {
+      font-size: 40px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    .social-icons i:hover {
+      transform: scale(1.2);
+      color: #ee0979;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html">
+      <img src="assets/logo.png" alt="Sancharam Logo" />
+    </a>
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="explore.html">EXPLORE</a></li>
+      <li><a href="bookings.html">BOOKINGS</a></li>
+      <li><a href="features.html">FEATURES</a></li>
+      <li><a href="profile.html">PROFILE</a></li>
+    </ul>
+  </nav>
+
+  <div class="subheading">Pre-Bookings</div>
+  <div class="underline"></div>
+
+  <div class="container">
+    <form onsubmit="return confirmBooking(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="place">Place</label>
+      <select id="place" required>
+        <option value="">-- Choose Place --</option>
+        <option>Hotels</option>
+        <option>Restaurants</option>
+        <option>Events(Beta)</option>
+        <option>Game Center</option>
+        <option>Turf</option>
+      </select>
+
+      <label for="district">Select District</label>
+      <select id="district" required>
+        <option value="">-- Choose District --</option>
+        <option>Chennai</option>
+        <option>Chengalpattu</option>
+        <option>Madurai</option>
+        <option>Ooty</option>
+        <option>Kanyakumari</option>
+        <option>Thanjavur</option>
+        <option>Coimbatore(Beta)</option>
+      </select>
+
+      <label for="checkin">Date</label>
+      <input type="date" id="checkin" required />
+
+      <label for="guests">Number of Peoples</label>
+      <input type="number" id="guests" min="1" max="10" required />
+
+      <button type="submit">Book</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+    <p>Sancharam © 2025, All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = "payment.html"; // Redirect to payment page
+    });
+  </script>
+</body>
+</html>

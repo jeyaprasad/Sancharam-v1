@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Features</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+
+    .header {
+      background-color: #000;
+      padding: 10px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      flex: 1;
+      text-align: left;
+    }
+
+    .nav-items {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+
+    .nav-item {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-item:hover {
+      color: #ff5c70;
+    }
+
+    .section-header h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .red-line {
+      border: none;
+      height: 4px;
+      width: 60px;
+      background-color: #ff5c70;
+      margin: 0 auto 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .feature {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 300px;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature i {
+      font-size: 2.5rem;
+      color: #ff5c70;
+      margin-bottom: 10px;
+    }
+
+    .feature h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .feature p {
+      color: #666;
+    }
+
+    .feature-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .feature input,
+    .feature select,
+    .feature button,
+    .feature label,
+    #converted {
+      font-size: 0.75rem;
+    }
+
+    .feature input,
+    .feature select {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 6px;
+      padding: 4px;
+    }
+
+    .feature button {
+      background-color: #ff5c70;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 5px 10px;
+      margin-top: 6px;
+    }
+
+    .feature button:hover {
+      background-color: #e6455e;
+    }
+
+    .footer {
+      background-color: #263238;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 2rem;
+    }
+
+    .social-media-links {
+      margin-bottom: 10px;
+    }
+
+    .social-media-links i {
+      margin: 0 10px;
+      font-size: 2.5rem;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-media-links i:hover {
+      color: #ff5c70;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+          <div class="logo" style="text-align: left;">
+      <img src="assets/logo.png" alt="Sancharam Logo" style="height:70px; width:300px;" />
+      </div>
+      <div class="nav-items">
+        <a class="nav-item" href="home.html">HOME</a>
+        <a class="nav-item" href="about.html">ABOUT</a>
+        <a class="nav-item" href="explore.html">EXPLORE</a>
+        <a class="nav-item" href="bookings.html">BOOKINGS</a>
+        <a class="nav-item" href="features.html">FEATURES</a>
+        <a class="nav-item" href="profile.html">PROFILE</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="section-header">
+    <h1>Features</h1>
+    <hr class="red-line" />
+  </div>
+
+  <div class="container">
+    <a class="feature-link" href="features/itinerary.html">
+      <div class="feature">
+        <i class="fas fa-map-marked-alt"></i>
+        <h2>Itinerary Planning</h2>
+        <p>Tailored travel plan for your perfect trip.</p>
+      </div>
+    </a>
+    <a class="feature-link" href="features/hidden-gems.html">
+      <div class="feature">
+        <i class="fas fa-gem"></i>
+        <h2>Discover Hidden Gems</h2>
+        <p>Find the secret and cultural locations worth visiting.</p>
+      </div>
+    </a>
+    <div class="feature">
+      <i class="fas fa-coins"></i>
+      <h2>Currency Converter</h2>
+      <input type="number" id="amount" placeholder="Amount" />
+      <label for="from">From:</label>
+      <select id="from">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="INR" selected>INR</option>
+      </select>
+      <label for="to">To:</label>
+      <select id="to">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="INR">INR</option>
+      </select>
+      <button onclick="convertCurrency()">Convert</button>
+      <p id="converted"></p>
+    </div>
+    <a class="feature-link" href="features/expenses.html">
+      <div class="feature">
+        <i class="fas fa-wallet"></i>
+        <h2>Budget Tracker</h2>
+        <p>Track your travel expenses with ease.</p>
+      </div>
+    </a>
+    <a class="feature-link" href="features/forum.html">
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h2>Crowdsourced Tips</h2>
+        <p>Get suggestions from fellow travelers and locals.</p>
+      </div>
+    </a>
+    <a class="feature-link" href="features/chatbot.html">
+      <div class="feature">
+        <i class="fas fa-robot"></i>
+        <h2>Voice Chatbot</h2>
+        <p>Use our chatbot to translate and get guidance in Tamil.</p>
+      </div>
+    </a>
+    <a class="feature-link" href="features/unknown.html">
+      <div class="feature">
+        <i class="fas fa-question-circle"></i>
+        <h2>Unknown</h2>
+        <p>Surprise feature in development.</p>
+      </div>
+    </a>
+    <a class="feature-link" href="features/checklist.html">
+      <div class="feature">
+        <i class="fas fa-check-square"></i>
+        <h2>Travel Checklist</h2>
+        <p>Plan what to pack and prepare for every journey.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="social-media-links">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+    <p>Sancharam &copy; 2025, All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function convertCurrency() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+
+      const rates = {
+        USD: { INR: 83, EUR: 0.93, USD: 1 },
+        EUR: { INR: 89, USD: 1.08, EUR: 1 },
+        INR: { USD: 0.012, EUR: 0.011, INR: 1 }
+      };
+
+      if (isNaN(amount)) {
+        document.getElementById('converted').innerText = "Please enter a valid amount.";
+        return;
+      }
+
+      const rate = rates[from][to];
+      const result = amount * rate;
+      document.getElementById('converted').innerText = `${to}: ${result.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
